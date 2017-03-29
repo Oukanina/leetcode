@@ -8,7 +8,7 @@ function inNumbers(c) {
         if(c === numbers[i]) return true;
         i += 1;
     }
-    return false;    
+    return false;
 }
 
 function startWith(s, target) {
@@ -97,11 +97,11 @@ function everyItemInNumbersOrEOrPoint(s) {
         if(!inNumbers(s[i])
             && s[i] !== '+'
             && s[i] !== '-'
-            && s[i] !== 'e' 
+            && s[i] !== 'e'
             && s[i] !== '.') return false;
         i += 1;
     }
-    return true;      
+    return true;
 }
 
 function trimSpace(s) {
@@ -118,7 +118,8 @@ function trimSpace(s) {
 }
 
 function isNumber(s) {
-    s = trimSpace(s.toString().split(''));
+    // s = trimSpace(s.toString().split(''));
+    s = s.toString.trim();
     if(!everyItemInNumbersOrEOrPoint(s)) return false;
     if(startWith(s, '-') || startWith(s, '+')) s.splice(0, 1);
     if(!startWithNumberOrPoint(s)) return false;
