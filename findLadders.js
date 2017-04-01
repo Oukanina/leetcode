@@ -58,7 +58,6 @@ BreadthFirstSearch.prototype = {
             var i;
             var v = queue.shift();
             var adjacency = this.graph.getAdjacency(v);
-            var find = false;
 
             for(i = 0; i < adjacency.length; i += 1) {
                 if(!this.marked[adjacency[i]]) {
@@ -133,7 +132,7 @@ function findLadders(beginWord, endWord, wordList) {
     var res = bfs.pathToTarget();
     console.timeEnd('findPath');
     if(!res.length) return res;
-    
+
     for(i = 0; i < res.length; i += 1) {
         for(j = 0; j < res[i].length; j += 1) {
             res[i][j] = wordList[res[i][j]];
